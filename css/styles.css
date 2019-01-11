@@ -312,6 +312,7 @@ nav h1 a {
 @media only screen and (max-width: 750px) {
   .inside #map-container {
     height: 30vh;
+    position: initial;
 
     width: 100%;
   }
