@@ -200,12 +200,27 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
+
     marker.on("click", onClick);
     function onClick() {
       window.location.href = marker.options.url;
     }
     self.markers.push(marker);
   });
+
+  // changing tabindex of the markers
+  const changeTabindexNegative = element => {
+    element.tabIndex = "-1";
+  };
+
+  const mar = document.querySelectorAll(".leaflet-marker-icon");
+  const leafletAttributes = document.querySelectorAll(
+    ".leaflet-control-attribution a"
+  );
+
+  const elementsToChange = [...mar, ...leafletAttributes];
+
+  elementsToChange.forEach(element => changeTabindexNegative(element));
 };
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
