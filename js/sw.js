@@ -28,17 +28,9 @@ self.addEventListener("install", e => {
 
 self.addEventListener("fetch", e => {
   e.respondWith(
-    caches.match(e.request).then(response => {
-      if (response) {
-        return response;
-      } else {
-        return fetch(e.request).then(response => {
-          caches.open("v1.2").then(cache => {
-            cache.put(e.request, repsonse.clone());
-          });
-          return response;
-        });
-      }
+    caches.match(e.request).then(function(response) {
+      if (response) return response;
+      return fetch(e.request);
     })
   );
 });
