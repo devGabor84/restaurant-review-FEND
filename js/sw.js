@@ -19,7 +19,25 @@ self.addEventListener("install", e => {
           "../img/7.jpg",
           "../img/8.jpg",
           "../img/9.jpg",
-          "../img/10.jpg"
+          "../img/10.jpg",
+          "/restaurant-reviews/",
+          "/restaurant-reviews/index.html",
+          "/restaurant-reviews/restaurant.html",
+          "/restaurant-reviews/restaurant.html?id=1",
+          "/restaurant-reviews/restaurant.html?id=2",
+          "/restaurant-reviews/restaurant.html?id=3",
+          "/restaurant-reviews/restaurant.html?id=4",
+          "/restaurant-reviews/restaurant.html?id=5",
+          "/restaurant-reviews/restaurant.html?id=6",
+          "/restaurant-reviews/restaurant.html?id=7",
+          "/restaurant-reviews/restaurant.html?id=8",
+          "/restaurant-reviews/restaurant.html?id=9",
+          "/restaurant-reviews/restaurant.html?id=10",
+          "/restaurant-reviews/js/main.js",
+          "/restaurant-reviews/js/restaurant_info.js",
+          "/restaurant-reviews/js/dbhelper.js",
+          "/restaurant-reviews/css/styles.css",
+          "/restaurant-reviews/data/restaurants.json"
         ])
         .catch(error => console.log(error));
     })
