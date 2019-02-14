@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,20 +22,30 @@
   <body>
     <header>
       <nav>
-        <h1><a tabindex="-1" href="/">Restaurant Reviews</a></h1>
+        <h1>
+          <a tabindex="-1" href="/" aria-label="Restaurant reviews page header"
+            >Restaurant Reviews</a
+          >
+        </h1>
       </nav>
     </header>
 
     <main id="maincontent">
-      <section id="map-container"><div id="map" tabindex="-1"></div></section>
+      <section id="map-container">
+        <div
+          id="map"
+          tabindex="-1"
+          aria-label="Map with multiply markers"
+          role="application"
+        ></div>
+      </section>
       <section>
-        <div class="filter-options">
+        <div class="filter-options" role="group">
           <h2>Filter Results</h2>
           <select
             id="neighborhoods-select"
             name="neighborhoods"
             onchange="updateRestaurants()"
-            tabindex="1"
           >
             <option value="all">All Neighborhoods</option>
           </select>
@@ -43,12 +53,11 @@
             id="cuisines-select"
             name="cuisines"
             onchange="updateRestaurants()"
-            tabindex="1"
           >
             <option value="all">All Cuisines</option>
           </select>
         </div>
-        <ul id="restaurants-list"></ul>
+        <ul id="restaurants-list" role="list"></ul>
       </section>
     </main>
     <script
@@ -59,12 +68,17 @@
     <script
       type="application/javascript"
       charset="utf-8"
-      src="js/dbhelper.js"
+      src="js/dbhelper.js?v=1.1"
     ></script>
     <script
       type="application/javascript"
       charset="utf-8"
-      src="js/main.js?v=1.1"
+      src="js/main.js?v=1.2"
+    ></script>
+    <script
+      type="application/javascript"
+      charset="utf-8"
+      src="js/register_sw.js"
     ></script>
 
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"></script> -->
